@@ -29,7 +29,6 @@ const Index = ({ data }) => {
       )}
       {skills && skills.length && <SectionSkills skills={skills} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
-      {!noBlog && <SectionBlog posts={posts} />}
     </Layout>
   );
 };
