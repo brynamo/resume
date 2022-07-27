@@ -138,7 +138,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-feed`,
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `G-5KPGMFN1V2`, // Optional Google Analytics
       },
