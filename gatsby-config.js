@@ -9,7 +9,7 @@ module.exports = {
     // Description that goes under your name in main bio
     description: `Ready to party w/ havarti`,
     // Optional: Twitter account handle
-    author: `@brynamo`,
+    // author: `@brynamo`,
     // Optional: Github account URL
     github: `https://github.com/brynamo`,
     // Optional: LinkedIn account URL
@@ -19,19 +19,25 @@ module.exports = {
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Devfolio',
+        name: 'InferKnow',
         description:
           'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS',
         link: 'https://github.com/RyanFitzgerald/devfolio',
       },
       {
-        name: 'ChromeExtensionKit',
+        name: 'Yoga',
         description:
           'Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates',
         link: 'https://chromeextensionkit.com/?ref=devfolio',
       },
       {
-        name: 'Another Cool Project',
+        name: 'LinkedIn Experiment',
+        description:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
+        link: 'https://github.com/RyanFitzgerald/devfolio',
+      },
+      {
+        name: 'Hydrobase',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
         link: 'https://github.com/RyanFitzgerald/devfolio',
@@ -40,19 +46,34 @@ module.exports = {
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
-        name: 'Acme Corp',
+        name: 'Amazon',
         description: 'Full-Stack Developer, February 2020 - Present',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+        link: 'https://www.amazon.jobs/en/teams/airplanes',
       },
       {
-        name: 'Globex Corp',
+        name: 'PlayStation',
         description: 'Full-Stack Developer, December 2017 - February 2020',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+        link: 'https://www.playstation.com/en-us/',
       },
       {
-        name: 'Hooli',
+        name: 'UC Berkeley',
         description: 'Full-Stack Developer, May 2015 - December 2017',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+        link: 'https://www.ischool.berkeley.edu/courses/info/290/ddwps',
+      },
+      {
+        name: 'Center for the Collaborative Classroom -- Full-Stack Developer, May 2015 - December 2017',
+        description: 'This is going to be some super awesome copy about how we sold a ton of product to someone',
+        link: 'https://www.collaborativeclassroom.org/',
+      },
+      {
+        name: 'International Computer Science Center',
+        description: 'Full-Stack Developer, May 2015 - December 2017',
+        link: 'http://teachingprivacy.icsi.berkeley.edu',
+      },
+      {
+        name: "Be'Chol Lashon",
+        description: 'Full-Stack Developer, May 2015 - December 2017',
+        link: 'https://globaljews.org/',
       },
     ],
     // Optional: List your skills, they must have `name` and `description`.
@@ -117,9 +138,9 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-feed`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `ADD YOUR TRACKING ID HERE`, // Optional Google Analytics
+        trackingId: `G-5KPGMFN1V2`, // Optional Google Analytics
       },
     },
     {
