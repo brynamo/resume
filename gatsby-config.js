@@ -22,19 +22,19 @@ module.exports = {
         name: 'InferKnow',
         description:
           "Provide California's Emergency Coordinators with the Best Information to Quickly Save Lives and Property",
-        link: 'https://www.ischool.berkeley.edu/sites/default/files/projects/hydrobasefinalreport.pdf',
+        link: 'https://github.com/brynamo/resume/blob/main/src/documents/inferknow.pdf',
       },
       {
         name: 'Yoda',
         description:
           'A privacy-preserving solution that facilitates virtual guided yoga practice. Trained and running inference on the edge.',
-        link: 'https://chromeextensionkit.com/?ref=devfolio',
+        link: 'https://github.com/brynamo/resume/blob/main/src/documents/yoda.pdf',
       },
       {
         name: 'Computer Vision for Automated Fish Detection',
         description:
           'CV To help fish',
-        link: 'https://docs.google.com/presentation/d/1K4Dbo-_4tKzeTdjJtllPyoMRlH-pm7OB40RPryrdL58/edit?usp=sharing',
+        link: 'https://github.com/brynamo/resume/blob/main/src/documents/natureConservancy.pdf',
       },
       {
         name: 'LinkedIn Experiment',
@@ -46,7 +46,7 @@ module.exports = {
         name: 'Hydrobase',
         description:
           "Let's make some guac!",
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+        link: 'https://www.ischool.berkeley.edu/sites/default/files/projects/hydrobasefinalreport.pdf',
       },
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
@@ -73,7 +73,7 @@ module.exports = {
         name: 'Workday',
         startEnd: 'May 2015 -- Aug 2015',
         description: 'This is going to be some super awesome copy about how we sold a ton of product to someone',
-        link: 'https://www.collaborativeclassroom.org/',
+        link: 'https://www.workday.com/',
       },
       {
         name: 'Center for the Collaborative Classroom',
@@ -97,18 +97,23 @@ module.exports = {
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
-        name: 'Languages & Frameworks',
+        name: 'Applications',
         description:
           'JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP',
       },
       {
-        name: 'Databases',
-        description: 'MongoDB, PostreSQL, MySQL',
+        name: 'Data',
+        description: 'MongoDB, PostreSQL, MySQL, DynamoDB, Druid, Data Lake Arch.',
       },
       {
-        name: 'Other',
+        name: 'Data Science + Machine Learning',
         description:
-          'Docker, Amazon Web Services (AWS), CI / CD, Microservices, API design, Agile / Scrum',
+          'SageMaker, Jupyter, Anaconda, Pandas, Numpy, dbt',
+      },
+      {
+        name: 'Certifications',
+        description:
+          'Scrum Master, Product Owner, IBM Cloud, AWS Arch, AWS Data Science, AWS ML',
       },
     ],
   },

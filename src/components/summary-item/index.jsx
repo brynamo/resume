@@ -24,7 +24,7 @@ const SummaryItem = ({ name, description, startEnd, link = false, internal = fal
       >
         {link ? linkContent : name}
       </h3>
-      <h4 class='startEnd'>{startEnd}</h4>
+      <h4 class='startEnd font-medium'>{startEnd}</h4>
       <p className={classes.description}>{description}</p>
     </div>
   );
