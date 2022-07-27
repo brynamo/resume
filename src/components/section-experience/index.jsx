@@ -5,7 +5,7 @@ import SummaryItem from '../summary-item';
 
 const SectionExperience = ({ experience }) => {
   if (!experience.length) return null;
-
+  
   return (
     <Section title="Experience">
       {experience.map((item) => (
@@ -14,6 +14,7 @@ const SectionExperience = ({ experience }) => {
           name={item.name}
           description={item.description}
           link={item.link}
+          startEnd={item.startEnd}
         />
       ))}
     </Section>

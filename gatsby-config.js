@@ -15,31 +15,37 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/brynamo/`,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+    about: `I believe everyone should be passionate about their work, always striving to do better and be better. With my background, I understand the multidimensional aspects of data and development, fostering collaboration and helping drive innovation excellence. As the digital and real worlds become even more closely connected, we need elegant solutions that enhance life...not complicate it. This is the challenge I am focused on solving.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
         name: 'InferKnow',
         description:
-          'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+          "Provide California's Emergency Coordinators with the Best Information to Quickly Save Lives and Property",
+        link: 'https://www.ischool.berkeley.edu/sites/default/files/projects/hydrobasefinalreport.pdf',
       },
       {
-        name: 'Yoga',
+        name: 'Yoda',
         description:
-          'Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates',
+          'A privacy-preserving solution that facilitates virtual guided yoga practice. Trained and running inference on the edge.',
         link: 'https://chromeextensionkit.com/?ref=devfolio',
+      },
+      {
+        name: 'Computer Vision for Automated Fish Detection',
+        description:
+          'CV To help fish',
+        link: 'https://docs.google.com/presentation/d/1K4Dbo-_4tKzeTdjJtllPyoMRlH-pm7OB40RPryrdL58/edit?usp=sharing',
       },
       {
         name: 'LinkedIn Experiment',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
+          'Does your photo matter on LinkedIn?',
         link: 'https://github.com/RyanFitzgerald/devfolio',
       },
       {
         name: 'Hydrobase',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
+          "Let's make some guac!",
         link: 'https://github.com/RyanFitzgerald/devfolio',
       },
     ],
@@ -47,32 +53,44 @@ module.exports = {
     experience: [
       {
         name: 'Amazon',
+        startEnd: 'Oct 2020 -- Present',
         description: 'Full-Stack Developer, February 2020 - Present',
         link: 'https://www.amazon.jobs/en/teams/airplanes',
       },
       {
         name: 'PlayStation',
+        startEnd: 'July 2016 -- Oct 2020',
         description: 'Full-Stack Developer, December 2017 - February 2020',
         link: 'https://www.playstation.com/en-us/',
       },
       {
         name: 'UC Berkeley',
+        startEnd: 'January 2016 -- May 2016',
         description: 'Full-Stack Developer, May 2015 - December 2017',
         link: 'https://www.ischool.berkeley.edu/courses/info/290/ddwps',
       },
       {
-        name: 'Center for the Collaborative Classroom -- Full-Stack Developer, May 2015 - December 2017',
+        name: 'Workday',
+        startEnd: 'May 2015 -- Aug 2015',
+        description: 'This is going to be some super awesome copy about how we sold a ton of product to someone',
+        link: 'https://www.collaborativeclassroom.org/',
+      },
+      {
+        name: 'Center for the Collaborative Classroom',
+        startEnd: 'Jan 2014 -- Jan 2015',
         description: 'This is going to be some super awesome copy about how we sold a ton of product to someone',
         link: 'https://www.collaborativeclassroom.org/',
       },
       {
         name: 'International Computer Science Center',
+        startEnd: 'Mar 2013 -- Aug 2015',
         description: 'Full-Stack Developer, May 2015 - December 2017',
         link: 'http://teachingprivacy.icsi.berkeley.edu',
       },
       {
         name: "Be'Chol Lashon",
-        description: 'Full-Stack Developer, May 2015 - December 2017',
+        startEnd: 'Oct 2011 -- Mar 2013',
+        description: 'This was an interesting experience',
         link: 'https://globaljews.org/',
       },
     ],

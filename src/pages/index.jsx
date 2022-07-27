@@ -53,6 +53,7 @@ export const pageQuery = graphql`
         }
         experience {
           name
+          startEnd
           description
           link
         }
