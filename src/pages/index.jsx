@@ -7,6 +7,7 @@ import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
 import SectionExperience from '../components/section-experience';
+import SectionEducation from '../components/section-education';
 import SectionProjects from '../components/section-projects';
 import SectionSkills from '../components/section-skills';
 import SEO from '../components/seo';
@@ -24,9 +25,8 @@ const Index = ({ data }) => {
       <SEO />
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
-      {experience && experience.length && (
-        <SectionExperience experience={experience} />
-      )}
+      {experience && experience.length && <SectionExperience experience={experience} />}
+      {education && education.length && <SectionExperience education={education} />}
       {skills && skills.length && <SectionSkills skills={skills} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
     </Layout>

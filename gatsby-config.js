@@ -94,6 +94,33 @@ module.exports = {
         link: 'https://globaljews.org/',
       },
     ],
+    //section to include education
+    education: [
+      {
+        name: 'UC Berkeley',
+        startEnd: 'Oct 2020 -- Present',
+        description: 'Full-Stack Developer, February 2020 - Present',
+        link: 'https://www.amazon.jobs/en/teams/airplanes',
+      },
+      {
+        name: 'UC Berkeley',
+        startEnd: 'July 2016 -- Oct 2020',
+        description: 'Full-Stack Developer, December 2017 - February 2020',
+        link: 'https://www.playstation.com/en-us/',
+      },
+      {
+        name: 'College for Creative Studies',
+        startEnd: 'January 2016 -- May 2016',
+        description: 'Full-Stack Developer, May 2015 - December 2017',
+        link: 'https://www.ischool.berkeley.edu/courses/info/290/ddwps',
+      },
+      {
+        name: 'U of M Ann Arbor',
+        startEnd: 'May 2015 -- Aug 2015',
+        description: 'This is going to be some super awesome copy about how we sold a ton of product to someone',
+        link: 'https://www.workday.com/',
+      },
+    ],
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
