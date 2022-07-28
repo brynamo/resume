@@ -17,6 +17,7 @@ const Index = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
   const experience = get(data, 'site.siteMetadata.experience', false);
+  const education = get(data, 'site.siteMetadata.education', false);
   const skills = get(data, 'site.siteMetadata.skills', false);
   const noBlog = !posts || !posts.length;
 
@@ -26,7 +27,7 @@ const Index = ({ data }) => {
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
       {experience && experience.length && <SectionExperience experience={experience} />}
-      {education && education.length && <SectionExperience education={education} />}
+      {education && education.length && <SectionEducation education={education} />}
       {skills && skills.length && <SectionSkills skills={skills} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
     </Layout>
@@ -52,6 +53,12 @@ export const pageQuery = graphql`
           link
         }
         experience {
+          name
+          startEnd
+          description
+          link
+        }
+        education {
           name
           startEnd
           description

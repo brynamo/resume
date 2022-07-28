@@ -3,7 +3,7 @@ import React from 'react';
 import Section from '../section';
 import SummaryItem from '../summary-item';
 
-const SectionExperience = ({ education }) => {
+const SectionEducation = ({ education }) => {
   if (!education.length) return null;
   
   return (
