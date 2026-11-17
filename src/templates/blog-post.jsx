@@ -1,10 +1,9 @@
 import { graphql } from 'gatsby';
-import moment from 'moment';
 import React from 'react';
 
 import Header from '../components/header';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const classes = {
   wrapper: 'mt-16 blog-content',
@@ -18,11 +17,8 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <Header metadata={data.site.siteMetadata} />
-      <SEO title={post.frontmatter.title} />
       <h1 className={classes.title}>{post.frontmatter.title}</h1>
-      <p className={classes.date}>
-        Posted on {moment(post.frontmatter.date).format('MMMM D, YYYY')}
-      </p>
+      <p className={classes.date}>Posted on {post.frontmatter.date}</p>
       <div
         className={classes.wrapper}
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -33,6 +29,15 @@ const BlogPost = ({ data }) => {
 
 export default BlogPost;
 
+export const Head = ({ data }) => (
+  <Seo
+    title={data.markdownRemark.frontmatter.title}
+    description={
+      data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt
+    }
+  />
+);
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -40,6 +45,7 @@ export const pageQuery = graphql`
         name
         title
         description
+        location
         about
         author
         github
@@ -52,7 +58,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
         description
       }
     }

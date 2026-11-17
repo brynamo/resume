@@ -1,40 +1,50 @@
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import React from 'react';
 
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
-import SectionBlog from '../components/section-blog';
-import SectionExperience from '../components/section-experience';
+import SectionCommunity from '../components/section-community';
 import SectionEducation from '../components/section-education';
+import SectionExperience from '../components/section-experience';
+import SectionLeadership from '../components/section-leadership';
 import SectionProjects from '../components/section-projects';
 import SectionSkills from '../components/section-skills';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
+
+const hasItems = (list) => Array.isArray(list) && list.length > 0;
 
 const Index = ({ data }) => {
-  const about = get(data, 'site.siteMetadata.about', false);
-  const projects = get(data, 'site.siteMetadata.projects', false);
+  const metadata = data.site.siteMetadata;
+  const {
+    about,
+    experience,
+    education,
+    skills,
+    leadership,
+    community,
+    projects,
+  } = metadata;
   const posts = data.allMarkdownRemark.edges;
-  const experience = get(data, 'site.siteMetadata.experience', false);
-  const education = get(data, 'site.siteMetadata.education', false);
-  const skills = get(data, 'site.siteMetadata.skills', false);
   const noBlog = !posts || !posts.length;
 
   return (
     <Layout>
-      <SEO />
-      <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
+      <Header metadata={metadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
-      {experience && experience.length && <SectionExperience experience={experience} />}
-      {education && education.length && <SectionEducation education={education} />}
-      {skills && skills.length && <SectionSkills skills={skills} />}
-      {projects && projects.length && <SectionProjects projects={projects} />}
+      {hasItems(experience) && <SectionExperience experience={experience} />}
+      {hasItems(education) && <SectionEducation education={education} />}
+      {hasItems(skills) && <SectionSkills skills={skills} />}
+      {leadership && <SectionLeadership leadership={leadership} />}
+      {hasItems(community) && <SectionCommunity community={community} />}
+      {hasItems(projects) && <SectionProjects projects={projects} />}
     </Layout>
   );
 };
 
 export default Index;
+
+export const Head = () => <Seo />;
 
 export const pageQuery = graphql`
   query {
@@ -43,19 +53,19 @@ export const pageQuery = graphql`
         name
         title
         description
+        location
         about
         author
         github
         linkedin
-        projects {
-          name
-          description
-          link
-        }
+        leadership
         experience {
           name
+          jobTitle
           startEnd
+          location
           description
+          highlights
           link
         }
         education {
@@ -68,12 +78,19 @@ export const pageQuery = graphql`
           name
           description
         }
+        community {
+          name
+          description
+          link
+        }
+        projects {
+          name
+          description
+          link
+        }
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 5) {
       edges {
         node {
           excerpt

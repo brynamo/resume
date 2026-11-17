@@ -1,82 +1,39 @@
-import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
-const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+// Rendered from each page's `Head` export (Gatsby Head API). The <html lang>
+// attribute is set in gatsby-ssr.js.
+const Seo = ({ description, title }) => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
         }
       }
-    `
-  );
+    }
+  `);
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const finalTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+  const author = site.siteMetadata?.author;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={finalTitle}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: finalTitle,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          property: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          property: `twitter:title`,
-          content: finalTitle,
-        },
-        {
-          property: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <title>{finalTitle}</title>
+      <meta name="description" content={metaDescription} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      {author && <meta name="twitter:creator" content={author} />}
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+    </>
   );
 };
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-};
-
-export default SEO;
+export default Seo;

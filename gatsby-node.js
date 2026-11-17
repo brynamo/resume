@@ -5,27 +5,22 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.jsx`);
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors) {
     throw result.errors;
@@ -63,6 +58,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
+// Declaring the types up front keeps every query valid when a section is left
+// out of gatsby-config.js or when content/blog has no posts in it.
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
@@ -71,20 +68,34 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       title: String
       description: String
+      location: String
       author: String
       github: String
       linkedin: String
       about: String
-      projects: [SectionItem]
-      experience: [SectionItem]
+      leadership: String
+      experience: [ExperienceItem]
       education: [SectionItem]
       skills: [SectionItem]
+      community: [SectionItem]
+      projects: [SectionItem]
+    }
+
+    type ExperienceItem {
+      name: String!
+      jobTitle: String
+      startEnd: String
+      location: String
+      description: String
+      highlights: [String]
+      link: String
     }
 
     type SectionItem {
       name: String!
-      description: String!
-      link: String!
+      startEnd: String
+      description: String
+      link: String
     }
 
     type MarkdownRemark implements Node {
@@ -97,7 +108,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
     }
-    
+
     type Fields {
       slug: String
     }

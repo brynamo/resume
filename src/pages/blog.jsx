@@ -4,27 +4,29 @@ import React from 'react';
 import BlogPosts from '../components/blog-posts';
 import Header from '../components/header';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import NotFound from '../pages/404';
 
-const Index = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
-  const noBlog = !posts || !posts.length;
+const hasPosts = (data) => data.allMarkdownRemark.edges.length > 0;
 
-  if (!posts || !posts.length) {
+const Index = ({ data }) => {
+  if (!hasPosts(data)) {
     return <NotFound />;
   }
 
   return (
     <Layout>
-      <SEO title="Blog" />
       <Header metadata={data.site.siteMetadata} />
-      {!noBlog && <BlogPosts posts={posts} />}
+      <BlogPosts posts={data.allMarkdownRemark.edges} />
     </Layout>
   );
 };
 
 export default Index;
+
+export const Head = ({ data }) => (
+  <Seo title={hasPosts(data) ? 'Blog' : 'Not found'} />
+);
 
 export const pageQuery = graphql`
   query {
@@ -33,13 +35,14 @@ export const pageQuery = graphql`
         name
         title
         description
+        location
         about
         author
         github
         linkedin
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt
