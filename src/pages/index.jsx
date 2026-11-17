@@ -22,6 +22,7 @@ const Index = ({ data }) => {
     education,
     skills,
     leadership,
+    communityTitle,
     community,
     projects,
   } = metadata;
@@ -36,7 +37,9 @@ const Index = ({ data }) => {
       {hasItems(education) && <SectionEducation education={education} />}
       {hasItems(skills) && <SectionSkills skills={skills} />}
       {leadership && <SectionLeadership leadership={leadership} />}
-      {hasItems(community) && <SectionCommunity community={community} />}
+      {hasItems(community) && (
+        <SectionCommunity title={communityTitle} community={community} />
+      )}
       {hasItems(projects) && <SectionProjects projects={projects} />}
     </Layout>
   );
@@ -59,6 +62,7 @@ export const pageQuery = graphql`
         github
         linkedin
         leadership
+        communityTitle
         experience {
           name
           jobTitle
