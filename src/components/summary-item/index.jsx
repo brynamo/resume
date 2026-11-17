@@ -8,6 +8,7 @@ const classes = {
   location: 'font-light',
   jobTitle: 'uppercase',
   description: 'text-gray-600 font-light mt-2 md:w-4/5',
+  tag: 'lg:whitespace-nowrap',
   highlights: 'list-disc list-outside pl-6 mt-3 mb-3 md:w-4/5',
   highlight: 'mb-2',
   divider: 'w-1/2',
@@ -20,10 +21,12 @@ const SummaryItem = ({
   location,
   jobTitle,
   highlights,
+  tags,
   link = false,
   internal = false,
 }) => {
   const hasHighlights = Array.isArray(highlights) && highlights.length > 0;
+  const hasTags = Array.isArray(tags) && tags.length > 0;
 
   let linkContent;
   if (internal) {
@@ -54,6 +57,18 @@ const SummaryItem = ({
       )}
       {jobTitle && <h5 className={classes.jobTitle}>{jobTitle}</h5>}
       {description && <p className={classes.description}>{description}</p>}
+      {hasTags && (
+        <p className={classes.description}>
+          {tags.map((tag, index) => (
+            <React.Fragment key={tag}>
+              <span className={classes.tag}>
+                {tag}
+                {index < tags.length - 1 && ' ·'}
+              </span>{' '}
+            </React.Fragment>
+          ))}
+        </p>
+      )}
       {hasHighlights && (
         <>
           <ul className={classes.highlights}>

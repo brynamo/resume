@@ -95,6 +95,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
       startEnd: String
       description: String
+      items: [String]
       link: String
     }
 

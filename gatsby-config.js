@@ -20,7 +20,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/brynamo/`,
     // Content of the About Me section
-    about: `Hands-on ML engineer and engineering leader: a decade of turning ambiguous problems into production ML – sub-second time-series anomaly detection on streaming events, LLM features shipped with guardrails and evaluation, fully local RAG systems, and challenger/champion pipelines that cut model release cycles by ~6 months. Equally at home in startup-speed and enterprise-compliance modes, and still in the code daily. I’ve led staff engineers at every company since 2016.`,
+    about: `Hands-on engineering manager who ships secure, scalable platforms and owns how they run: a threat-detection platform protecting 4.8M enterprise users at 99.9% availability, its on-call load cut 15x, and a logistics platform enabling $20M in daily routing decisions at 99.99% uptime, delivered by a team I built from scratch. I lead remote teams, grow engineers into leaders, and keep delivery predictable – OKR attainment from 50% to 90%, sustained seven quarters – and I’m still in the code daily. Equally at home in startup-speed and enterprise-compliance modes; I’ve led staff engineers at every company since 2016.`,
     // Experience, most recent first. `name` is required. `jobTitle`, `startEnd`,
     // `location`, `link`, `description` and `highlights` (the bullets) are optional.
     experience: [
@@ -30,9 +30,9 @@ module.exports = {
         startEnd: 'Apr 2026 – Present',
         location: 'Seattle, WA',
         highlights: [
-          'Head Playlist’s 10-engineer data platform org (grown from 8) processing ~40 TB daily across a ~200 TB estate – Fivetran ingestion, dbt transformation, the Snowflake warehouse, and Databricks streaming – powering analytics for all five Playlist brands',
-          'Launched a natural-language analytics platform pairing Claude with the Snowflake warehouse, opening governed self-serve data access to ~1,000 employees',
+          'Head Playlist’s 10-engineer data platform org (doubled from 5), processing ~40 TB daily across a ~200 TB estate – Fivetran ingestion, dbt transformation, the Snowflake warehouse, and Databricks streaming – powering analytics for all five Playlist brands',
           'Raised quarterly OKR delivery from 40% to over 80% in my first quarter by stabilizing sprint priorities and instituting metrics-driven planning and review',
+          'Shipped governed natural-language analytics over the Snowflake warehouse through a hosted AWS MCP gateway I architected – per-user OAuth identity propagation keeps RBAC and masking per person – opening self-serve data to ~1,000 employees with a 95% return rate',
           'Built “TeamOS” myself with AI – Claude skills and agents that institutionalize how the team runs and how other teams work with us – balancing consistency, best practices, and speed',
         ],
       },
@@ -46,29 +46,29 @@ module.exports = {
         ],
       },
       {
-        name: 'Box – Shield Threat Protection & Shield ML',
+        name: 'Box — Shield Threat Protection & Shield ML',
         jobTitle: 'Engineering Manager',
         startEnd: 'Jan 2023 – Oct 2025',
         location: 'Seattle, WA',
         highlights: [
-          'Led four teams across the US and Poland – 20+ engineers, including two staff engineers and a direct-report engineering manager – protecting 4.8M enterprise users',
-          'Re-architected model serving from 12-hour batch scoring to real-time streaming inference (Apache Beam, PyTorch, GCP Dataflow) – holding a sub-second customer-experience SLA at hundreds of thousands of events per second, powering Box’s first preventative threat capability: ransomware detection',
-          'Generated supervised training datasets from detonated malware, gating challenger-to-champion promotion on catching novel samples – replacing reactive “scream-test” releases and cutting model release cycles by ~6 months',
+          'Led four teams across the US and Poland – 20+ engineers including two staff and a direct-report engineering manager – protecting 4.8M enterprise users',
+          'Created the automated threat-response platform – detections that once required human intervention now trigger automatic action (severing connections, sandboxing accounts) – 7B files annually, 3M+ alerts weekly, 99.9% availability for 1,000+ enterprises, and on-call alerts cut 15x to under 200 per sprint',
+          'Lifted OKR delivery from 50% to 90% and sustained it for seven straight quarters through disciplined Scrum – shipping critical features 2x faster, including an agent-based security-analysis POC that redirected org strategy in a month',
+          'Partnered with the CTO and VPs of Security, Enterprise & Governance on two malware-scanning migrations – an on-prem-to-GCP move (10K+ requests/sec) and a vendor switch (personally negotiating multi-million-dollar contracts) – cutting scan turnaround from 45 minutes to under 5 while holding FedRAMP High, HIPAA, and IRAP compliance',
           'Rebuilt Shield ML from the ground up, turning an inherited team with no ML background into six engineers shipping production ML, and established Box’s ML career track with HR',
-          'Ran the automated threat-response platform – 7B files scanned annually, 3M+ security alerts weekly, 99.9% availability for 1,000+ enterprises – while cutting on-call alert volume 15x, from 3,000+ to under 200 per sprint',
+          'Re-architected model serving from 12-hour batch scoring to real-time streaming inference (Apache Beam, PyTorch, GCP Dataflow) – holding a sub-second customer-experience SLA at hundreds of thousands of events per second, powering Box’s first preventative threat capability: ransomware detection',
           'Shipped Shield’s first production LLM feature, AI Threat Summary – customer-facing generative security summaries with safety guardrails and evaluation',
-          'Partnered with the CTO and VPs of Security and Enterprise & Governance on the on-prem-to-GCP malware-scanning migration (10K+ requests/sec) – scan turnaround cut from 45 minutes to under 5 – negotiating multi-million-dollar vendor contracts and holding FedRAMP High, HIPAA, and IRAP compliance',
-          'Lifted OKR delivery from 50% to 90% and sustained it for seven consecutive quarters through disciplined Scrum – shipping critical features 2x faster, including an agent-based security-analysis POC that redirected org strategy within a month',
+          'Generated supervised training datasets from detonated malware, gating challenger-to-champion promotion on catching novel samples – replacing “scream-test” releases and cutting model release cycles by ~6 months',
         ],
       },
       {
-        name: 'Amazon Air – Data Application',
+        name: 'Amazon Air — Data Application',
         jobTitle: 'Engineering Manager / ML Engineer',
         startEnd: 'Oct 2020 – Nov 2022',
         location: 'Seattle, WA',
         link: 'https://www.amazon.jobs/en/teams/airplanes',
         highlights: [
-          'Turned around a year-delayed, mission-critical logistics platform – greenfield AWS delivery in 12 months – processing 450K packages across 200 daily flights and enabling $20M in daily routing decisions at 99.99% uptime',
+          'Turned around a year-delayed, mission-critical logistics platform – building the team from scratch and shipping greenfield on AWS in 12 months – processing 450K packages across 200 daily flights and enabling $20M in daily routing decisions at 99.99% uptime',
           'Orchestrated integration across 7 stakeholder groups – executives, external aviation providers, ground crews, data engineering, BI, and support – improving delivery-estimate accuracy 30% for 1,000+ daily users and 300K+ customers',
           'Architected the platform (Lambda, DynamoDB, WAF) with full Infrastructure-as-Code governance, auto-scaling, and 5-second real-time processing – cutting costs 40% across 70 global destinations',
         ],
@@ -80,7 +80,7 @@ module.exports = {
         location: 'San Mateo, CA',
         link: 'https://www.playstation.com/en-us/',
         highlights: [
-          'Led a 5-person data science team as player-coach through the PS5 launch – defining KPI frameworks for a 150M-user platform and averting a launch-window data-lake failure before production impact',
+          'Led a 5-person data science team as player-coach through the PS5 launch – defining KPI frameworks for the platform transition and averting a launch-window data-lake failure',
           'Owned recommendation systems processing social graphs and gameplay patterns for 150M MAU, delivering a 23% lift in PlayStation Store engagement',
         ],
       },
@@ -92,7 +92,7 @@ module.exports = {
         link: 'https://www.playstation.com/en-us/',
         highlights: [
           'Drove a performance framework to 100% adoption across 750 engineers as product owner and lead data scientist of PlayStation’s performance org – zero OS-level degradations reached customers',
-          'Built hierarchical predictive models with automated CI/CD testing (1,000 daily tests) that prevented 100% of performance degradations across 23 system applications, ending 3-month development freezes for 350 engineers',
+          'Built hierarchical predictive models with automated CI/CD testing (1,000 daily tests) that prevented 100% of degradations across 23 system applications, ending 3-month development freezes for 350 engineers',
           'Architected real-time telemetry processing 24B events daily from 100M+ devices at under 15 seconds of latency, with hardware-embedded monitoring for fleet-wide remote debugging',
         ],
       },
@@ -103,50 +103,95 @@ module.exports = {
         location: 'San Francisco, CA',
         link: 'https://www.playstation.com/en-us/',
         highlights: [
-          'Product owner for PlayStation Music: delivered in-game background music and grew social music discovery from zero to 100K monthly active users, coordinating system-level Spotify integration across Stockholm, San Francisco, and Tokyo teams',
+          'PlayStation Music product owner: delivered in-game background music and grew social discovery from zero to 100K MAU, coordinating system-level Spotify integration across Stockholm, San Francisco, and Tokyo',
         ],
       },
     ],
     // Education. `name` is required. `startEnd`, `description` and `link` are optional.
     education: [
       {
-        name: 'UC Berkeley – Master of Information & Data Science',
+        name: 'UC Berkeley — Master of Information & Data Science',
         startEnd: '2018 – 2020',
         description: 'Machine Learning emphasis',
         link: 'https://ischoolonline.berkeley.edu/data-science/',
       },
       {
-        name: 'UC Berkeley – Master of Information Management & Systems',
+        name: 'UC Berkeley — Master of Information Management & Systems',
         startEnd: '2014 – 2016',
         link: 'https://www.ischool.berkeley.edu/programs/mims',
       },
       {
-        name: 'University of Michigan – BFA, Photojournalism & Web Design',
+        name: 'University of Michigan — BFA, Photojournalism & Web Design',
         startEnd: '2005 – 2009',
         link: 'https://stamps.umich.edu/',
       },
     ],
-    // Skills, they must have `name` and `description`.
+    // Skills, they must have `name` and a list of `items`.
     skills: [
       {
         name: 'Core Competencies',
-        description:
-          'Time-Series & Anomaly Detection, Real-Time Model Serving, GenAI: RAG & LLM Evaluation, MLOps & CI/CD for ML, Python & PyTorch, Model Validation & Reproducibility, Ambiguity to Production, Cloud ML (GCP & AWS), Technical Leadership',
+        items: [
+          'Technical & Architectural Direction',
+          'Secure & Scalable Services',
+          'Reliability & Incident Reduction',
+          'Predictable Agile Delivery',
+          'Coaching & Building Leaders',
+          'Remote & Distributed Teams',
+          'Cross-Functional Partnership',
+          'Roadmaps & Tech-Debt Management',
+          'AI-Accelerated Engineering',
+        ],
       },
       {
-        name: 'ML & GenAI',
-        description:
-          'Python, PyTorch, TensorFlow, scikit-learn, LangChain, LangGraph, RAG, Vector Search & Embeddings, LLM Evals & Guardrails, Vertex AI, Weights & Biases, Claude & Cursor',
+        name: 'Backend, Cloud & Operations',
+        items: [
+          'Python',
+          'SQL',
+          'TypeScript',
+          'JavaScript',
+          'AWS',
+          'GCP',
+          'Kubernetes',
+          'Docker',
+          'CI/CD',
+          'Infrastructure-as-Code',
+          'Pulumi & Terraform',
+          'OAuth & Identity Propagation',
+          'FedRAMP, HIPAA, SOC 2 & GDPR',
+          'Grafana',
+          'Splunk',
+        ],
       },
       {
         name: 'Data & Streaming',
-        description:
-          'Apache Beam, GCP Dataflow, Kafka, Spark, Snowflake, dbt, Fivetran, Databricks, SQL',
+        items: [
+          'Spark',
+          'Kafka',
+          'Apache Beam',
+          'GCP Dataflow',
+          'Snowflake',
+          'Databricks',
+          'dbt',
+          'Fivetran',
+          'BigQuery',
+        ],
       },
       {
-        name: 'Cloud & Operations',
-        description:
-          'GCP, AWS, Kubernetes, Docker, CI/CD, Infrastructure-as-Code, Grafana, Splunk, Chronosphere',
+        name: 'ML & GenAI',
+        items: [
+          'PyTorch',
+          'TensorFlow',
+          'scikit-learn',
+          'RAG',
+          'Vector Search & Embeddings',
+          'LLM Evals & Guardrails',
+          'LangChain',
+          'LangGraph',
+          'Vertex AI',
+          'Claude Code',
+          'Cursor',
+          'MCP',
+        ],
       },
     ],
     // Optional: content of the Leadership Philosophy section

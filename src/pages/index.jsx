@@ -77,6 +77,7 @@ export const pageQuery = graphql`
         skills {
           name
           description
+          items
         }
         community {
           name
