@@ -61,6 +61,7 @@ export const pageQuery = graphql`
         author
         github
         linkedin
+        email
         leadership
         communityTitle
         experience {

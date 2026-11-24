@@ -40,6 +40,7 @@ export const pageQuery = graphql`
         author
         github
         linkedin
+        email
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

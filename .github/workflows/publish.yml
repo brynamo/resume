@@ -1,0 +1,72 @@
+name: Build and publish
+
+# Every pull request is built as a check. Every push to main (a merged pull
+# request) is built again and published to the `public` branch, which GitHub
+# Pages serves at brynamo.me. See README.md, "Publishing".
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          GATSBY_TELEMETRY_DISABLED: "1"
+      - name: Check the build
+        run: bash scripts/check-build.sh
+
+  publish:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: publish
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          GATSBY_TELEMETRY_DISABLED: "1"
+      - name: Check the build
+        run: bash scripts/check-build.sh
+      - name: Check out the public branch
+        uses: actions/checkout@v4
+        with:
+          ref: public
+          path: site
+      - name: Replace the published site with this build
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Remove every published file first, so nothing from an older build survives.
+          git rm -r -q --ignore-unmatch .
+          cp -a ../public/. .
+          git add -A
+          if git diff --cached --quiet; then
+            echo "The published site already matches this build."
+            exit 0
+          fi
+          git commit -q -m "Publish ${GITHUB_SHA::7} from main"
+          git push origin HEAD:public

@@ -13,6 +13,8 @@ module.exports = {
     description: `Engineering Manager / ML Engineer`,
     // Optional: shown next to the tagline
     location: `Seattle, WA`,
+    // Optional: email address for the Email link in the header
+    email: `bryan.job.app@gmail.com`,
     // Optional: Twitter account handle, only used for the twitter:creator meta tag
     author: `@brynamo`,
     // Optional: Github account URL

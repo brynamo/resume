@@ -18,7 +18,7 @@ const classes = {
 };
 
 const Header = ({ metadata = {}, noBlog = false }) => {
-  const { name, description, location, github, linkedin } = metadata;
+  const { name, description, location, email, github, linkedin } = metadata;
 
   return (
     <div className={classes.wrapper}>
@@ -39,6 +39,13 @@ const Header = ({ metadata = {}, noBlog = false }) => {
           {location && <span className={classes.location}>{location}</span>}
         </p>
         <ul className={classes.list}>
+          {email && (
+            <li className={classes.item}>
+              <a className={classes.link} href={`mailto:${email}`}>
+                Email
+              </a>
+            </li>
+          )}
           {github && (
             <li className={classes.item}>
               <a
